@@ -83,7 +83,7 @@ def train_mlp(
   optimizer = keras.optimizers.AdamW(
       learning_rate=learning_rate, weight_decay=0.005
   )
-  # Intialize CE loss.
+  # Initialize CE loss.
   loss_function = keras.losses.SparseCategoricalCrossentropy(from_logits=False)
 
   mlp_model.compile(

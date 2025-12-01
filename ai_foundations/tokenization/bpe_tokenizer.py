@@ -67,7 +67,7 @@ class BPEWordTokenizer:
     Args:
       texts: A list of strings or a string representing the text corpus.
       vocabulary: Optional list of strings with unique tokens.
-      num_merges: Defines the how many rounds of merges should be performed when
+      num_merges: Defines how many rounds of merges should be performed when
         learning the BPE merges.
     """
 
@@ -179,7 +179,7 @@ class BPEWordTokenizer:
     Returns:
       Decoded text string.
     """
-    # Covert to list if a single token index is specified.
+    # Convert to list if a single token index is specified.
     if isinstance(token_ids, int):
       token_ids = [token_ids]
 
@@ -270,7 +270,7 @@ class BPEWordTokenizer:
       for tokenized_paragraph in tokenized_corpus:
         flat_corpus.extend(tokenized_paragraph)
 
-      # Find the most frequent pair of adjecent tokens.
+      # Find the most frequent pair of adjacent tokens.
       pair_freqs = self._get_pair_frequencies(flat_corpus)
       if not pair_freqs:
         break
@@ -296,13 +296,13 @@ class BPEWordTokenizer:
 
   @classmethod
   def from_url(cls, url: str) -> "BPEWordTokenizer":
-    """Loads a pickled tokenizer from a url.
+    """Loads a pickled tokenizer from a URL.
 
     Args:
       url: The URL where the pickled tokenizer is stored.
 
     Returns:
-      An instance of BPEWordTokenizer intialized with the vocabulary and merge
+      An instance of BPEWordTokenizer initialized with the vocabulary and merge
         rules of the original tokenizer.
     """
     with request.urlopen(url) as response:

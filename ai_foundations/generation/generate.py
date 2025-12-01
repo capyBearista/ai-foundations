@@ -83,8 +83,8 @@ def generate_text(
         " 'random' and 'greedy'."
     )
 
-  # Introduce randomness by re-intializing JAX RNG with a different seed on
-  # each call. While this harms reproducability, it avoids having to pass a JAX
+  # Introduce randomness by re-initializing JAX RNG with a different seed on
+  # each call. While this harms reproducibility, it avoids having to pass a JAX
   # key on every call, which would likely be confusing to learners.
   main_key = jax.random.PRNGKey(random.randint(0, 1000000))
 

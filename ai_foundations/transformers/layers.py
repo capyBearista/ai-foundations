@@ -130,7 +130,7 @@ class TokenAndPositionEmbedding(layers.Layer):
     return apply
 
   def call(self, x: jax.Array) -> jax.Array:
-    """Applied and combines token embeddings with positional embeddings.
+    """Applies and combines token embeddings with positional embeddings.
 
     Args:
       x: Input tensor of shape (batch_size, sequence_length).
@@ -143,7 +143,7 @@ class TokenAndPositionEmbedding(layers.Layer):
 
     if self.positional_embedding_type == "sinusoidal":
       # This factor sets the relative scale of the embedding
-      # and positonal_encoding.
+      # and positional_encoding.
       token_embeddings *= ops.sqrt(
           ops.cast(self.embedding_dim, dtype="float32")
       )

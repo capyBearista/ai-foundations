@@ -577,7 +577,7 @@ def visualize_mlp_architecture(hidden_dims: List[int], n_classes: int):
 
 
 def plot_spiral_data(dataset_url: str):
-  """Dowloads and plots a four-class spiral dataset.
+  """Downloads and plots a four-class spiral dataset.
 
   Args:
     dataset_url: URL to CSV file with spiral dataset.
@@ -603,7 +603,7 @@ def plot_spiral_data(dataset_url: str):
 def visualize_hyperparameter_loss(
     experiment_log: dict[HyperParameterConfig, float],
 ):
-  """A function to visualize the hyperparamter-loss curves.
+  """A function to visualize the hyperparameter-loss curves.
 
   The plots are constructed from the experiment log that learners constructed
   in the lab "Mitigate Overfitting". It checks whether learners filled in all
